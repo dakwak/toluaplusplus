@@ -1,0 +1,60 @@
+.\" Hey, Emacs!  This is an -*- nroff -*- source file.
+
+.TH tolua++5.1 1 "20 Jul 2009" "" "Tolua++"
+
+.SH NAME
+tolua++5.1 \- lua language binding development helper program
+
+.SH SYNOPSIS
+tolua++5.1
+[ \fBoptions\fP ]
+.I input_file
+
+.SH DESCRIPTION
+.I tolua++5.1
+is a program to help in building applications using the tolua++5.1 library for
+the Lua scripting language.
+
+.SH OPTIONS
+Command line options are:
+.IP "-v"
+Print version information.
+.IP "-o \fIfile\fP"
+Set output file; default is stdout.
+.IP "-H \fIfile\fP"
+Create include file.
+.IP "-n \fIname\fP"
+Set package name; default is input file root name.
+.IP "-p"
+Parse only.
+.IP "-P"
+Parse and print structure information (for debugging).
+.IP "-S"
+disable support for c++ strings
+.IP "-1"
+substract 1 to operator[] index (for compatibility with tolua5)
+.IP "-L \fIfile\fP"
+run lua file (with dofile()) before doing anything
+.IP "-D"
+disable automatic exporting of destructors for classes that have
+constructors (for compatibility with tolua5)
+.IP "-W"
+disable warnings for unsupported features (for compatibility
+with tolua5)
+.IP "-C"
+disable cleanup of included lua code (for easier debugging)
+.IP "-E \fIvalue\fP[=value]"
+add extra values to the luastate
+.IP "-t"
+export a list of types asociates with the C++ typeid name
+.IP "-q"
+don't print warnings to the console
+.IP "-h"
+Print usage information.
+.P
+Should the input file be omitted, stdin is assumed; in that case, the package
+name must be explicitly set.
+
+.SH AUTHOR
+This manual page was originally written by Filip Van Raemdonck <mechanix@debian.org> and Jimmy Kaplowitz <jimmy@debian.org> for the Debian GNU/Linux system.
+It was expanded for tolua++5.1 by Cesare Tirabassi <norsetto@ubuntu.com> for the Ubuntu GNU/Linux system (but may be used by others).

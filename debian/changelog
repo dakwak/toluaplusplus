@@ -1,0 +1,48 @@
+tolua++ (1.0.93+repack-0ubuntu2) groovy; urgency=medium
+
+  * Use the debian packaging, with Ubuntu version number to fix build failures
+    and grab new fixes from Debian.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 06 Jun 2020 11:57:11 +0200
+
+tolua++ (1.0.93-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Take from Fedora patch for fix FTBFS with scons 3.1.2.
+    (Closes: #947583)
+  * Bump minimal dh version to 9.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Wed, 20 May 2020 11:39:04 +0200
+
+tolua++ (1.0.93-3) unstable; urgency=low
+
+  * Adopt package. (Closes: #632654)
+  * Change priority from extra to optional.
+  * Fix DEP-5 related lintian warnings.
+  * Switch to dh 7 "rules.tiny" style debian/rules.
+  * Add debian/patches/fix-spelling-errors.patch to fix spelling errors
+    detected by lintian (spelling-error-in-binary).
+  * Add doc-base entry.
+  * Add Vcs-* entries in debian/control.
+  * Bump Standards-Version to 3.9.3; no changes required.
+  * Bump dh compat level from 5 to 7.
+
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Tue, 08 May 2012 22:40:40 -0700
+
+tolua++ (1.0.93-2) unstable; urgency=low
+
+  * QA upload.
+  * debian/control:
+    - Set Maintainer to Debian QA group.
+    - Remove Vcs-* fields.
+    - Bump Standards-Version to 3.9.2; no changes required.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 23 Jul 2011 17:32:07 +0200
+
+tolua++ (1.0.93-1) unstable; urgency=low
+
+  * Initial release (Closes: #446020)
+  * Add patch debian/patches/bump_version.patch:
+    fix upstream version number (should be 1.0.93)
+
+ -- Cesare Tirabassi <norsetto@ubuntu.com>  Mon, 22 Feb 2010 12:24:42 +0100

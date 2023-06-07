@@ -1,0 +1,129 @@
+Description: Fix spelling errors found by lintian
+Forwarded: not-yet
+Author: Vincent Cheng <Vincentc1208@gmail.com>
+Last-Update: 05-08-2012
+
+--- a/src/bin/lua/basic.lua
++++ b/src/bin/lua/basic.lua
+@@ -174,7 +174,7 @@
+ end
+ 
+ -- splits a string using a pattern, considering the spacial cases of C code (templates, function parameters, etc)
+--- pattern can't contain the '^' (as used to identify the begining of the line)
++-- pattern can't contain the '^' (as used to identify the beginning of the line)
+ -- also strips whitespace
+ function split_c_tokens(s, pat)
+ 
+--- a/src/bin/lua/verbatim.lua
++++ b/src/bin/lua/verbatim.lua
+@@ -17,7 +17,7 @@
+ --   line = line text
+ classVerbatim = {
+  line = '',
+-	cond = nil,    -- condition: where to generate the code (s=suport, r=register)
++	cond = nil,    -- condition: where to generate the code (s=support, r=register)
+ }
+ classVerbatim.__index = classVerbatim
+ setmetatable(classVerbatim,classFeature)
+@@ -66,7 +66,7 @@
+  if strsub(l,1,1) == "'" then
+   l = strsub(l,2)
+  elseif strsub(l,1,1) == '$' then
+-  cond = 'sr'       -- generates in both suport and register fragments
++  cond = 'sr'       -- generates in both support and register fragments
+   l = strsub(l,2)
+  end
+  return _Verbatim {
+--- a/src/bin/lua/package.lua
++++ b/src/bin/lua/package.lua
+@@ -297,7 +297,7 @@
+  until nsubst==0
+ 
+  -- deal with renaming directive
+- repeat -- I don't know why this is necesary
++ repeat -- I don't know why this is necessary
+ 	code,nsubst = gsub(code,'\n%s*%$renaming%s*(.-)%s*\n', function (r) appendrenaming(r) return "\n" end)
+  until nsubst == 0
+ 
+--- a/doc/tolua++.html
++++ b/doc/tolua++.html
+@@ -1378,7 +1378,7 @@
+ <h4>tolua.inherit (<i>table</i>, <i>var</i>)</h4> (new on <b>tolua++</b>)
+ 
+ Causes <b>tolua++</b> to recognise <i>table</i> as an object with the same type as <i>var</i>,
+-and to use <i>var</i> when necesary. For example, consider this method:
++and to use <i>var</i> when necessary. For example, consider this method:
+ <p>
+ 
+ <ul><tt>void set_parent(Widget* p_parent);</tt></ul>
+@@ -1397,7 +1397,7 @@
+ </pre>
+ 
+ Remember that this will only cause the table to be recognised as type 'Widget' when
+-necesary. To be able to access Widget's methods, you'll have to implement your own
++necessary. To be able to access Widget's methods, you'll have to implement your own
+ object system. A simple example:
+ <p>
+ 
+@@ -1422,7 +1422,7 @@
+ <p>
+ 
+ <b>Note:</b> the current implementation (as of version 1.0.6) stores the C instance
+-inside the lua table on the field ".c_instance", and looks that up when necesary. This
++inside the lua table on the field ".c_instance", and looks that up when necessary. This
+ might change in the future, so it is recommended to use an alternative way to store the
+ C instance to use with your own object system.
+ 
+@@ -1744,7 +1744,7 @@
+ 
+ When passing a full userdata to a function that accepts light userdata parameters (void*),
+ the <b>tolua++</b> library function <tt>tolua_touserdata</tt> will detect the full userdata and dereference
+-the void** pointer if necesary. This is a change on the function's behaviour (which used to return the pointer as-is). This allows us to pass pointers to objects to a function that accepts
++the void** pointer if necessary. This is a change on the function's behaviour (which used to return the pointer as-is). This allows us to pass pointers to objects to a function that accepts
+ void* pointers. Note that this was a problem when switching from <b>toLua</b> version 4 to version 5 (and <b>tolua++</b> versions &lt; 1.0.90).
+ 
+ <h4>toLua 4</h4>
+--- a/src/bin/lua/operator.lua
++++ b/src/bin/lua/operator.lua
+@@ -212,7 +212,7 @@
+  	f.cast_operator = true
+  end
+  if f.kind == '[]' and ref=='&' and f.const~='const' then
+-  Operator(d,'&'..k,a,c) 	-- create correspoding set operator
++  Operator(d,'&'..k,a,c) 	-- create corresponding set operator
+  end
+  return _Operator(f)
+ end
+--- a/src/lib/tolua_map.c
++++ b/src/lib/tolua_map.c
+@@ -386,7 +386,7 @@
+ }
+ 
+ /* Register a usertype
+-	* It creates the correspoding metatable in the registry, for both 'type' and 'const type'.
++	* It creates the corresponding metatable in the registry, for both 'type' and 'const type'.
+ 	* It maps 'const type' as being also a 'type'
+ */
+ TOLUA_API void tolua_usertype (lua_State* L, const char* type)
+--- a/src/bin/lua/clean.lua
++++ b/src/bin/lua/clean.lua
+@@ -69,7 +69,7 @@
+    break
+   end
+  end
+- -- eliminate unecessary spaces
++ -- eliminate unnecessary spaces
+  S = gsub(S,"[ \t]+"," ")
+  S = gsub(S,"[ \t]*\n[ \t]*","\n")
+ 	S = gsub(S,"\n+","\n")
+--- a/src/bin/lua/doit.lua
++++ b/src/bin/lua/doit.lua
+@@ -35,7 +35,7 @@
+ 		end
+ 	end
+ 
+-	-- parse table with extra paramters
++	-- parse table with extra parameters
+ 	parse_extra()
+ 
+ 	-- do this after setting the package name

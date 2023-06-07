@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_clean:
+	scons -c all configure
+	rm -f ./.sconsign.dblite ./src/bin/toluabind.h
+	dh_clean
+
+override_dh_auto_configure:
+	cp $(CURDIR)/debian/custom.py $(CURDIR)
+	scons prefix=$(CURDIR)/debian/libtolua++5.1-dev/usr configure
+
+override_dh_auto_build:
+	scons all
+
+override_dh_auto_install:
+	scons install

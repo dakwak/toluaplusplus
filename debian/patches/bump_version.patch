@@ -1,0 +1,15 @@
+Description: fix upstream version number (should be 1.0.93)
+Author: Cesare Tirabassi <norsetto@ubuntu.com>
+Forwarded: no
+
+--- tolua++-1.0.93.orig/include/tolua++.h
++++ tolua++-1.0.93/include/tolua++.h
+@@ -20,7 +20,7 @@
+ #define TOLUA_API extern
+ #endif
+ 
+-#define TOLUA_VERSION "tolua++-1.0.92"
++#define TOLUA_VERSION "tolua++-1.0.93"
+ 
+ #ifdef __cplusplus
+ extern "C" {
