@@ -395,7 +395,13 @@ TOLUA_API void tolua_usertype (lua_State* L, const char* type)
  strncat(ctype,type,120);
 
 	/* create both metatables */
- if (tolua_newmetatable(L,ctype) && tolua_newmetatable(L,type))
+       char ctype_modifiable[strlen(ctype) + 1];
+       strcpy(ctype_modifiable, ctype);
+
+       char type_modifiable[strlen(type) + 1];
+       strcpy(type_modifiable, type); 
+        if (tolua_newmetatable(L, ctype_modifiable) && tolua_newmetatable(L, type_modifiable))
+
 	 mapsuper(L,type,ctype);             /* 'type' is also a 'const type' */
 }
 
@@ -410,8 +416,10 @@ TOLUA_API void tolua_beginmodule (lua_State* L, const char* name)
 	 lua_pushstring(L,name);
 		lua_rawget(L,-2);
 	}
-	else
-         lua_getglobal(L, "arbitrary");
+	else{
+	  lua_rawgeti(L, LUA_REGISTRYINDEX, LUA_RIDX_GLOBALS);
+	}
+         
 }
 /* End module
 	* It pops the module (or class) from the stack
@@ -444,7 +452,7 @@ TOLUA_API void tolua_module (lua_State* L, const char* name, int hasvar)
 	else
 	{
 		/* global table */
-		lua_getglobal(L, "arbitrary");
+                lua_rawgeti(L, LUA_REGISTRYINDEX, LUA_RIDX_GLOBALS);
 
 	}
 	if (hasvar)
