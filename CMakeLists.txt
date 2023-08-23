@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 11)
 find_package(Lua REQUIRED)
 include_directories(${LUA_INCLUDE_DIR})
 include_directories(src/lib src/bin)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 file(GLOB LIB_SRC src/lib/*.c)
 add_library(tolua++ SHARED ${LIB_SRC})
@@ -16,4 +17,5 @@ add_executable(tolua++_bin ${BIN_SRC})
 target_link_libraries(tolua++_bin tolua++ ${LUA_LIBRARIES})
 set_target_properties(tolua++_bin PROPERTIES OUTPUT_NAME tolua++)
 install(TARGETS tolua++_bin DESTINATION /usr/local/bin)
+install(FILES include/tolua++.h DESTINATION /usr/local/include)
 
