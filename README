@@ -1,6 +1,10 @@
-This is tolua++-1.0
+This is tolua++-1.1
+
+Lua Version: 5.4
+Libxml version: 2.12
 
 * What is tolua++?
+
   tolua++ is an extension of toLua, a tool to integrate C/C++ code with
   Lua. tolua++ includes new features oriented to c++, such as class
   templates.
@@ -17,14 +21,14 @@ This is tolua++-1.0
   tolua++ is freely available for both academic and commercial purposes.
   See COPYRIGHT for details.
 
-  tolua++ can be downloaded from the sites below:
-            http://www.codenix.com/~tolua/
-
 * Installation
-  See INSTALL.
+``` bash
+  mkdir build && cmake .. && make && make install
+```
 
 * Contacting the author
-  tolua has been designed and implemented by Waldemar Celes.
-  tolua++ is maintained by Ariel Manzur.
+  tolua has been designed and implemented by Waldemar Celes and later was maintained by Ariel Manzur.
+  Currently this tolua++ repository is maintained by dakwak.
+
   Send your comments, bug reports and anything else to 
-  tolua@codenix.com
+  tolua@dakwak.com
