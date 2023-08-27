@@ -24,8 +24,11 @@ Libxml version: 2.12
 * Installation
 
 ```
-  mkdir build && cmake .. && make && make install
+
+mkdir build && cmake .. && make && make install
+
 ```
+
 
 * Contacting the author
   tolua has been designed and implemented by Waldemar Celes and later was maintained by Ariel Manzur.
