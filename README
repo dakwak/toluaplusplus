@@ -22,7 +22,8 @@ Libxml version: 2.12
   See COPYRIGHT for details.
 
 * Installation
-``` bash
+
+```
   mkdir build && cmake .. && make && make install
 ```
 
