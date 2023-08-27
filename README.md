@@ -1,7 +1,7 @@
 This is tolua++-1.1
 
 Lua Version: 5.4
-Libxml version: 2.12
+
 
 * What is tolua++?
 
